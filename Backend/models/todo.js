@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema(
     {
-        name: String
+        todoName: String,
+        todoDesc: String,
     }
 );
+
+export default mongoose.model('Todo',todoSchema);
+
+
