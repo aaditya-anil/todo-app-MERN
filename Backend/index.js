@@ -1,7 +1,8 @@
 import express from "express"
 import { PORT, mongoDBUrl } from "./config.js";
 import mongoose from 'mongoose'
-import booksRouter from './routes/todoRoute.js'
+import todoRouter from './routes/todoRoute.js'
+import cors from 'cors'
 
 const app = express();
 
@@ -9,17 +10,13 @@ const app = express();
 app.use(express.json());
 
 // Middleware for handling cors policy
-app.use(cors({
-    origin: 'http://localhost:5173/',
-    methods: ['GET','POST','PUT','DELETE'],
-    allowedHeaders: ['Content-Type']
-}));
+app.use(cors());
 
 app.get('/', (request,response) =>{
-    return response.status(200).send("Hi");
+    return response.status(200).send("Hi Youve reached the Backend Server of GetThingsDone");
 });
 
-app.use('/books',booksRouter)
+app.use('/todo',todoRouter)
 
 mongoose
     .connect(mongoDBUrl)

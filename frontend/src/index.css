@@ -1,4 +1,103 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+
+#root{
+    height: 100vh;
+    width: 100vh;
+    align-items: center;
+}
+
+.Container{
+    width : 100%;
+    background-color: rgb(255, 255, 255);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+.Todo-List > ul{
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 2rem;
+}
+
+.Todo-List li {
+    background-color: rgb(210, 223, 235);
+    margin-left: 12px;
+    margin-right: 12px;
+    display: grid;
+    grid-template-columns: 20fr 1fr 1fr;
+    align-items: center;
+    text-align: left;
+    padding-left: 18px;
+}
+
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* From Uiverse.io by Satwinder04 */ 
+.input-container {
+    position: relative;
+    margin: 50px auto;
+    width: 200px;
+    display: flex;
+    
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+  }
+  
+  .input-container input[type="text"]:focus ~ .underline,
+  .input-container input[type="text"]:valid ~ .underline {
+    transform: scaleX(1);
+  }
+
+.input-container button{
+    opacity: 0;
+}
+  
